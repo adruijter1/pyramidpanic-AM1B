@@ -1,6 +1,6 @@
 using System;
 
-namespace PyramidPanic_am1b
+namespace PyramidPanic
 {
 #if WINDOWS || XBOX
     static class Program
@@ -10,7 +10,7 @@ namespace PyramidPanic_am1b
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (PyramidPanic game = new PyramidPanic())
             {
                 game.Run();
             }
