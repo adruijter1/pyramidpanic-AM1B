@@ -14,25 +14,40 @@ namespace PyramidPanic
    
     public class PyramidPanic : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        // Fields, de velden van deze class 
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
         public PyramidPanic()
         {
-            graphics = new GraphicsDeviceManager(this);
+            this.graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 
         
         protected override void Initialize()
         {
-           base.Initialize();
+            // Maakt de muiscursor zichtbaar in het canvas
+            IsMouseVisible = true;
+            
+            // Veranderd de titel van het canvas
+            this.Window.Title = "Pyramid Panic";
+            
+            // Veranderd de breedte van het canvas
+            this.graphics.PreferredBackBufferWidth = 640;
+
+            //Veranderd de hoogte van het canvas
+            this.graphics.PreferredBackBufferHeight = 480;
+
+            // Past de veranderingen betreffende het canvas toe
+            this.graphics.ApplyChanges();
+            base.Initialize();
         }
 
         
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         
@@ -44,8 +59,10 @@ namespace PyramidPanic
         
         protected override void Update(GameTime gameTime)
         {
-           
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            // Wanneer de gamepad Back toets of de toetsenbord Escape toets wordt ingedrukt dan
+            // Stopt het spel 
+            if ( (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) ||
+                 (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();           
 
             base.Update(gameTime);
