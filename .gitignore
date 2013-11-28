@@ -1,0 +1,5 @@
+# Dit is een file waarin je bestandstypen of hele mappen door git kunt
+# laten negeren. Met een # kun je commentaar in je .gitignore file zetten
+
+**/bin/**
+**/obj/**
