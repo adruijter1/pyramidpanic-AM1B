@@ -71,7 +71,7 @@ namespace PyramidPanic
         
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Purple);
             base.Draw(gameTime);
         }
     }
