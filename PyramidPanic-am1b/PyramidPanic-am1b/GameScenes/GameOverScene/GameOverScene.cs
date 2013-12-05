@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Media; 
 
 namespace PyramidPanic
 {
-    public class GameOverScene
+    public class GameOverScene : IGameState
     {
         //Fields
         private PyramidPanic game;

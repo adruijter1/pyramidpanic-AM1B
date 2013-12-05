@@ -34,6 +34,11 @@ namespace PyramidPanic
         // Maak een variabele aan van het type GameEndScene
         private GameEndScene gameEndScene; // Camelcase notatie
 
+        /* De variabele die alle verschillende Scene-objecten kan bevatten is van het type 
+         * IGameState. Dit is geen class, maar een nieuw objecttype Interface
+         */
+        private IGameState gameState;
+
         public PyramidPanic()
         {
             this.graphics = new GraphicsDeviceManager(this);
@@ -79,6 +84,8 @@ namespace PyramidPanic
 
             // Maak een instantie aan van de class GameEndScene
             this.gameEndScene = new GameEndScene(this);
+
+            this.gameState = this.gameEndScene;
         }
 
         
@@ -97,7 +104,7 @@ namespace PyramidPanic
                 this.Exit();
             
             // Roep de Update(gameTime) method aan van het startScene-object
-            this.gameEndScene.Update(gameTime);
+            this.gameState.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -111,7 +118,7 @@ namespace PyramidPanic
             this.spriteBatch.Begin();
 
             // Roep de Draw(gameTime) method aan van het startScene-object
-            this.gameEndScene.Draw(gameTime);
+            this.gameState.Draw(gameTime);
 
             // Roep de End() method aan van het spriteBatch-object
             this.spriteBatch.End();
