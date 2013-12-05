@@ -24,6 +24,16 @@ namespace PyramidPanic
         // Maak een variabele aan van het type PlayScene
         private PlayScene playScene; // Camelcase notatie
 
+        // Maak een variabele aan van het type GameOverScene
+        private GameOverScene gameOverScene; // Camelcase notatie
+        
+        
+        // Maak een variabele aan van het type HelpScene
+        private HelpScene helpScene; // Camelcase notatie
+
+        // Maak een variabele aan van het type GameEndScene
+        private GameEndScene gameEndScene; // Camelcase notatie
+
         public PyramidPanic()
         {
             this.graphics = new GraphicsDeviceManager(this);
@@ -60,6 +70,15 @@ namespace PyramidPanic
 
             // Maak een instantie aan van de class StartScene
             this.playScene = new PlayScene(this);
+
+            // Maak een instantie aan van de class GameOverScene
+            this.gameOverScene = new GameOverScene(this);
+
+            // Maak een instantie aan van de class HelpScene
+            this.helpScene = new HelpScene(this);
+
+            // Maak een instantie aan van de class GameEndScene
+            this.gameEndScene = new GameEndScene(this);
         }
 
         
@@ -78,7 +97,7 @@ namespace PyramidPanic
                 this.Exit();
             
             // Roep de Update(gameTime) method aan van het startScene-object
-            this.playScene.Update(gameTime);
+            this.gameEndScene.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -92,7 +111,7 @@ namespace PyramidPanic
             this.spriteBatch.Begin();
 
             // Roep de Draw(gameTime) method aan van het startScene-object
-            this.playScene.Draw(gameTime);
+            this.gameEndScene.Draw(gameTime);
 
             // Roep de End() method aan van het spriteBatch-object
             this.spriteBatch.End();

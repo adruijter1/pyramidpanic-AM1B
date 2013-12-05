@@ -108,8 +108,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameScenes\GameEndScene\GameEndScene.cs" />
+    <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
     <Compile Include="GameScenes\StartScene\StartScene.cs" />
+    <Compile Include="HelpScene.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Game\Program.cs" />
     <Compile Include="Game\PyramidPanic.cs" />
@@ -151,8 +154,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GameScenes\GameEndScene\" />
-    <Folder Include="GameScenes\GameOverScene\" />
     <Folder Include="GameScenes\HelpScene\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
