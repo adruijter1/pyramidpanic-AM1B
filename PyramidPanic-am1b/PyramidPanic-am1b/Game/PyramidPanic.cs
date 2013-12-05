@@ -18,6 +18,12 @@ namespace PyramidPanic
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
+        // Maak een variabele aan van het type StartScene
+        private StartScene startScene; // Camelcase notatie
+
+        // Maak een variabele aan van het type PlayScene
+        private PlayScene playScene; // Camelcase notatie
+
         public PyramidPanic()
         {
             this.graphics = new GraphicsDeviceManager(this);
@@ -48,6 +54,12 @@ namespace PyramidPanic
         protected override void LoadContent()
         {
             this.spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            // Maak een instantie aan van de class StartScene
+            this.startScene = new StartScene(this);
+
+            // Maak een instantie aan van de class StartScene
+            this.playScene = new PlayScene(this);
         }
 
         
@@ -63,7 +75,10 @@ namespace PyramidPanic
             // Stopt het spel 
             if ( (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) ||
                  (Keyboard.GetState().IsKeyDown(Keys.Escape)))
-                this.Exit();           
+                this.Exit();
+            
+            // Roep de Update(gameTime) method aan van het startScene-object
+            this.playScene.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -72,6 +87,16 @@ namespace PyramidPanic
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Purple);
+
+            // Roep de Begin() method aan van het spriteBatch-object
+            this.spriteBatch.Begin();
+
+            // Roep de Draw(gameTime) method aan van het startScene-object
+            this.playScene.Draw(gameTime);
+
+            // Roep de End() method aan van het spriteBatch-object
+            this.spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }
