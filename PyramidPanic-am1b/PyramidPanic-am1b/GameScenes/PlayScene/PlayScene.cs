@@ -40,7 +40,10 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
-
+            if (Keyboard.GetState().IsKeyDown(Keys.B))
+            {
+                this.game.GameState = this.game.HelpScene;
+            }
         }
         
         //Draw

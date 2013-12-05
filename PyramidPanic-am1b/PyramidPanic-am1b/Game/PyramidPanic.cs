@@ -39,6 +39,41 @@ namespace PyramidPanic
          */
         private IGameState gameState;
 
+        //Properties
+        #region Properties
+        public IGameState GameState
+        {
+            get { return this.gameState; }
+            set { this.gameState = value; }
+        }
+
+        public StartScene StartScene
+        {
+            get { return this.startScene; }
+        }
+
+        public PlayScene PlayScene
+        {
+            get { return this.playScene; }
+        }
+
+        public GameOverScene GameOverScene
+        {
+            get { return this.gameOverScene; }
+        }
+
+        public HelpScene HelpScene
+        {
+            get { return this.helpScene; }
+        }
+
+        public GameEndScene GameEndScene
+        {
+            get { return this.gameEndScene; }
+        } 
+        #endregion
+
+
         public PyramidPanic()
         {
             this.graphics = new GraphicsDeviceManager(this);
@@ -85,7 +120,7 @@ namespace PyramidPanic
             // Maak een instantie aan van de class GameEndScene
             this.gameEndScene = new GameEndScene(this);
 
-            this.gameState = this.gameEndScene;
+            this.gameState = this.startScene;
         }
 
         
