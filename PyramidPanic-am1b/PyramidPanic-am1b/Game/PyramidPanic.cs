@@ -138,8 +138,13 @@ namespace PyramidPanic
                  (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();
             
+            // Roep de Update method aan van de Input class
+            Input.Update();
+
             // Roep de Update(gameTime) method aan van het startScene-object
             this.gameState.Update(gameTime);
+
+            
 
             base.Update(gameTime);
         }
