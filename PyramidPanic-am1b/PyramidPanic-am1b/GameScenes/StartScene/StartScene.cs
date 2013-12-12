@@ -20,6 +20,11 @@ namespace PyramidPanic
         // Stap1: maak een variabele (reference) aan van de class, bedenk een goede passende naam
         private Image background;
 
+        // Maak een variabele aan genaamd title, deze is van het type Image
+        private Image title;
+
+       
+
         //Constructor
         public StartScene(PyramidPanic game)
         {
@@ -38,6 +43,9 @@ namespace PyramidPanic
         public void LoadContent()
         {
             this.background = new Image(this.game, @"StartScene\Background", Vector2.Zero);
+
+            // Maak een object aan van het type Image
+            this.title = new Image(this.game, @"StartScene\Title", new Vector2(100f, 30f));
         }
 
 
@@ -55,6 +63,7 @@ namespace PyramidPanic
         {
             this.game.GraphicsDevice.Clear(Color.Red);
             this.background.Draw(gameTime);
+            this.title.Draw(gameTime);
         }
     }
 }
