@@ -114,6 +114,7 @@
     <Compile Include="GameScenes\StartScene\StartScene.cs" />
     <Compile Include="GameScenes\HelpScene\HelpScene.cs" />
     <Compile Include="Game\IGameState.cs" />
+    <Compile Include="HelperClasses\Image.cs" />
     <Compile Include="Input\Input.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Game\Program.cs" />

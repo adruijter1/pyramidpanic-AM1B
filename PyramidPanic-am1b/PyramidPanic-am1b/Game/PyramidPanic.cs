@@ -70,7 +70,18 @@ namespace PyramidPanic
         public GameEndScene GameEndScene
         {
             get { return this.gameEndScene; }
-        } 
+        }
+
+        /* Hoe maak je een property voor een private field?
+         * Een property is public, is van hetzelfde type als het field, heeft dezelfde naam
+         * als het field maar is met Pascal-casing geschreven. Een getter maak als volgt:
+         * get { return this.<naam van het field>; }
+         */
+
+        public SpriteBatch SpriteBatch
+        {
+            get { return this.spriteBatch; }
+        }
         #endregion
 
 
