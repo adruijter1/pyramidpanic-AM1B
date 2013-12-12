@@ -47,7 +47,7 @@ namespace PyramidPanic
             this.background = new Image(this.game, @"StartScene\Background", Vector2.Zero);
 
             // Maak een object aan van het type Image
-            this.title = new Image(this.game, @"StartScene\Title", new Vector2(100f, 30f));
+            this.title = new Image(this.game, @"StartScene\Title", new Vector2(100f, 20f));
 
             this.menu = new Menu(this.game);
         }

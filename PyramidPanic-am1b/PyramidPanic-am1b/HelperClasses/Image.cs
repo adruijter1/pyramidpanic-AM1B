@@ -26,12 +26,19 @@ namespace PyramidPanic
          */
         private Rectangle rectangle;
 
+        // De game instantie wordt als field geregistreerd
         private PyramidPanic game;
+
+        // We maken een variabele van het type Color en geven het de standaardwaarde Color.White
+        private Color color = Color.White;
 
         #endregion
 
         #region Properties
-        
+        public Color Color
+        {
+            set { this.color = value; }
+        }
         #endregion
 
         #region Constructor
@@ -61,7 +68,7 @@ namespace PyramidPanic
         #region Draw
         public void Draw(GameTime gameTime)
         {
-            this.game.SpriteBatch.Draw(this.texture, this.rectangle, Color.White);
+            this.game.SpriteBatch.Draw(this.texture, this.rectangle, this.color);
         }
         #endregion
 
