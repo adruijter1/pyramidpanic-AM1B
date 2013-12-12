@@ -23,6 +23,8 @@ namespace PyramidPanic
         // Maak een variabele aan genaamd title, deze is van het type Image
         private Image title;
 
+        private Menu menu;
+
        
 
         //Constructor
@@ -46,6 +48,8 @@ namespace PyramidPanic
 
             // Maak een object aan van het type Image
             this.title = new Image(this.game, @"StartScene\Title", new Vector2(100f, 30f));
+
+            this.menu = new Menu(this.game);
         }
 
 
@@ -64,6 +68,7 @@ namespace PyramidPanic
             this.game.GraphicsDevice.Clear(Color.Red);
             this.background.Draw(gameTime);
             this.title.Draw(gameTime);
+            this.menu.Draw(gameTime);
         }
     }
 }
