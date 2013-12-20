@@ -24,7 +24,7 @@ namespace PyramidPanic
         private Button buttonState = Button.Start;
 
         // Definieer een kleur van de actieve knop
-        private Color activeColor = Color.Gold;
+        private Color activeColor = Color.PeachPuff;
 
         // game bevat de PyramidPanic instantie doorgegeven als argument aan de constructor
         private PyramidPanic game;

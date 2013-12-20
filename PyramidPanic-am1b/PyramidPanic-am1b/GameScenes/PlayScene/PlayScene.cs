@@ -49,7 +49,7 @@ namespace PyramidPanic
         //Draw
         public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Blue);
+            this.game.GraphicsDevice.Clear(Color.Gainsboro);
         }
 
     }
