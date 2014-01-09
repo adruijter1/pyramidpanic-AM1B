@@ -40,9 +40,9 @@ namespace PyramidPanic
         //Update
         public void Update(GameTime gameTime)
         {
-            if (Input.EdgeDetectKeyDown(Keys.Right))
+            if (Input.EdgeDetectKeyDown(Keys.B))
             {
-                this.game.GameState = this.game.HelpScene;
+                this.game.GameState = this.game.StartScene;
             }
         }
         
