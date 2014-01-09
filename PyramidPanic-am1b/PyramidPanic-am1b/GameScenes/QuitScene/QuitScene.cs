@@ -11,13 +11,13 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public class HelpScene : IGameState
+    public class QuitScene : IGameState
     {
         //Fields
         private PyramidPanic game;
 
         //Constructor
-        public HelpScene(PyramidPanic game)
+        public QuitScene(PyramidPanic game)
         {
             this.game = game;
             this.Initialize();
@@ -44,12 +44,16 @@ namespace PyramidPanic
             {
                 this.game.GameState = this.game.StartScene;
             }
+            if (Input.EdgeDetectKeyDown(Keys.Q))
+            {
+                this.game.Exit();
+            }
         }
         
         //Draw
         public void Draw(GameTime gameTime)
         {
-            this.game.GraphicsDevice.Clear(Color.Pink);
+            this.game.GraphicsDevice.Clear(Color.Black);
         }
     }
 }

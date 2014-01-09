@@ -18,17 +18,24 @@ namespace PyramidPanic
         private static MouseState ms, oms;
         private static GamePadState gps, ogps;
 
+        // Maak een rectangle voor de muiscursor
+        private static Rectangle mouseRect;
+
         //Constructor van een static class mag geen excesmodifier (private, public, protected)
         //krijgen.
         static Input()
         {
             ks = Keyboard.GetState();
+            ms = Mouse.GetState();
+            mouseRect = new Rectangle(ms.X, ms.Y, 1, 1);
         }
 
         public static void Update()
         {
             oks = ks;
+            oms = ms;
             ks = Keyboard.GetState();
+            ms = Mouse.GetState();
         }
 
 
@@ -37,6 +44,8 @@ namespace PyramidPanic
         {
             return (ks.IsKeyDown(key) && oks.IsKeyUp(key));
         }
+
+
 
     }
 }

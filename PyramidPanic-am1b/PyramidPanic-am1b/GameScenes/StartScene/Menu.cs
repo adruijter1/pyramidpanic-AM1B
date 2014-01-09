@@ -132,7 +132,7 @@ namespace PyramidPanic
                     this.loadButton.Color = this.activeColor;
                     if (Input.EdgeDetectKeyDown(Keys.Enter))
                     {
-                        this.game.GameState = this.game.PlayScene;
+                        this.game.GameState = this.game.LoadScene;
                     }
                     break;
                 case Button.Help:
@@ -146,14 +146,14 @@ namespace PyramidPanic
                     this.scoresButton.Color = this.activeColor;
                     if (Input.EdgeDetectKeyDown(Keys.Enter))
                     {
-                        this.game.GameState = this.game.PlayScene;
+                        this.game.GameState = this.game.ScoreScene;
                     }
                     break;
                 case Button.Quit:
                     this.quitButton.Color = this.activeColor;
                     if (Input.EdgeDetectKeyDown(Keys.Enter))
                     {
-                        this.game.GameState = this.game.PlayScene;
+                        this.game.GameState = this.game.QuitScene;
                     }
                     break;
             }

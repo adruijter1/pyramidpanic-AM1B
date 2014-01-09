@@ -24,12 +24,21 @@ namespace PyramidPanic
         // Maak een variabele aan van het type PlayScene
         private PlayScene playScene; // Camelcase notatie
 
+        // Maak een variabele aan van het type LoadScene
+        private LoadScene loadScene; // Camelcase notatie
+
         // Maak een variabele aan van het type GameOverScene
         private GameOverScene gameOverScene; // Camelcase notatie
         
         
         // Maak een variabele aan van het type HelpScene
         private HelpScene helpScene; // Camelcase notatie
+
+        // Maak een variabele aan van het type HelpScene
+        private ScoreScene scoreScene; // Camelcase notatie
+
+        //Maak een variabele van het typ QuitScene
+        private QuitScene quitScene; //Camelcase notatie
 
         // Maak een variabele aan van het type GameEndScene
         private GameEndScene gameEndScene; // Camelcase notatie
@@ -57,6 +66,12 @@ namespace PyramidPanic
             get { return this.playScene; }
         }
 
+        public LoadScene LoadScene
+        {
+            get { return this.loadScene;  }
+        }
+
+
         public GameOverScene GameOverScene
         {
             get { return this.gameOverScene; }
@@ -65,6 +80,16 @@ namespace PyramidPanic
         public HelpScene HelpScene
         {
             get { return this.helpScene; }
+        }
+
+        public ScoreScene ScoreScene
+        {
+            get { return this.scoreScene;  }
+        }
+
+        public QuitScene QuitScene
+        {
+            get { return this.quitScene; }
         }
 
         public GameEndScene GameEndScene
@@ -119,6 +144,9 @@ namespace PyramidPanic
             // Maak een instantie aan van de class StartScene
             this.startScene = new StartScene(this);
 
+            // Maak een instantie aan van de class LoadScene
+            this.loadScene = new LoadScene(this);
+
             // Maak een instantie aan van de class StartScene
             this.playScene = new PlayScene(this);
 
@@ -127,6 +155,12 @@ namespace PyramidPanic
 
             // Maak een instantie aan van de class HelpScene
             this.helpScene = new HelpScene(this);
+
+            // Maak een instantie aan van de class ScoreScene
+            this.scoreScene = new ScoreScene(this);
+
+            // Maak een instantie aan van de class QuitScene en ken deze toe aan this.quitScene
+            this.quitScene = new QuitScene(this);
 
             // Maak een instantie aan van de class GameEndScene
             this.gameEndScene = new GameEndScene(this);
