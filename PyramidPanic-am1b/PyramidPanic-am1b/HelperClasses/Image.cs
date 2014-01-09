@@ -39,6 +39,11 @@ namespace PyramidPanic
         {
             set { this.color = value; }
         }
+
+        public Rectangle Rectangle
+        {
+            get { return this.rectangle; }
+        }
         #endregion
 
         #region Constructor

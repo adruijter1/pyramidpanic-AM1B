@@ -85,6 +85,15 @@ namespace PyramidPanic
         #region Update
         public void Update(GameTime gameTime)
         {
+            /* Maak het menu bestuurbaar met de muis
+             */            
+            this.MakeButtonActiveByMouse(this.startButton, this.game.PlayScene, Button.Start);
+            this.MakeButtonActiveByMouse(this.loadButton, this.game.LoadScene, Button.Load);
+            this.MakeButtonActiveByMouse(this.helpButton, this.game.HelpScene, Button.Help);
+            this.MakeButtonActiveByMouse(this.scoresButton, this.game.ScoreScene, Button.Scores);
+            this.MakeButtonActiveByMouse(this.quitButton, this.game.QuitScene, Button.Quit);
+ 
+           
             // Als de right knop wordt ingedrukt....
             if (Input.EdgeDetectKeyDown(Keys.Right))
             {
@@ -170,5 +179,29 @@ namespace PyramidPanic
             }           
         }
         #endregion
+
+        // HelperMethod
+        private void ChangeButtonColorToNormal()
+        {
+            foreach (Image button in this.buttonList)
+            {
+                button.Color = Color.White;
+            }
+        }
+
+        // HelperMethod Als je met je muiscursor over een knop gaat wordt deze knop actief
+        // Er wordt dan ook gedetecteerd of er linksgeklikt wordt.
+        private void MakeButtonActiveByMouse(Image button, IGameState scene, Button buttonState)
+        {
+            if (button.Rectangle.Intersects(Input.MouseRect()))
+            {
+                if (Input.EdgeDetectMousePressLeft())
+                {
+                    this.game.GameState = scene;
+                }
+                this.buttonState = buttonState;
+                this.ChangeButtonColorToNormal();
+            }
+        }
     }
 }
