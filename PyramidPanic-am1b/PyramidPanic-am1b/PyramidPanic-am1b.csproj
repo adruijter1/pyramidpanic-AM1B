@@ -111,6 +111,10 @@
     <Compile Include="GameScenes\GameEndScene\GameEndScene.cs" />
     <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
     <Compile Include="GameScenes\LoadScene\LoadScene.cs" />
+    <Compile Include="GameScenes\PlayScene\Beetle\Beetle.cs" />
+    <Compile Include="GameScenes\PlayScene\Beetle\WalkUp.cs" />
+    <Compile Include="GameScenes\PlayScene\Beetle\IBeetleState.cs" />
+    <Compile Include="GameScenes\PlayScene\Beetle\WalkDown.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
     <Compile Include="GameScenes\QuitScene\QuitScene.cs" />
     <Compile Include="GameScenes\ScoreScene\ScoreScene.cs" />
