@@ -14,18 +14,18 @@ namespace PyramidPanic
     public class AnimatedSprite
     {
         //Fields
-        private Beetle beetle;
+        private IAnimatedSprite iAnimatedSprite;
         protected Rectangle destinationRect, sourceRect;
         protected SpriteEffects effect = SpriteEffects.None;
         private float timer = 0f;
 
 
         // Constructor
-        public AnimatedSprite(Beetle beetle)
+        public AnimatedSprite(IAnimatedSprite iAnimatedSprite)
         {
-            this.beetle = beetle;
-            this.destinationRect = new Rectangle((int)this.beetle.Position.X,
-                                                 (int)this.beetle.Position.Y,
+            this.iAnimatedSprite = iAnimatedSprite;
+            this.destinationRect = new Rectangle((int)this.iAnimatedSprite.Position.X,
+                                                 (int)this.iAnimatedSprite.Position.Y,
                                                  32,
                                                  32);
             this.sourceRect = new Rectangle(0, 0, 32, 32);
@@ -50,14 +50,14 @@ namespace PyramidPanic
                 this.timer += 1 / 60f;
             }
             
-            this.destinationRect.X = (int)this.beetle.Position.X;
-            this.destinationRect.Y = (int)this.beetle.Position.Y;
+            this.destinationRect.X = (int)this.iAnimatedSprite.Position.X;
+            this.destinationRect.Y = (int)this.iAnimatedSprite.Position.Y;
         }
 
         // Draw method
         public void Draw(GameTime gameTime)
         {
-            this.beetle.Game.SpriteBatch.Draw(this.beetle.Texture,
+            this.iAnimatedSprite.Game.SpriteBatch.Draw(this.iAnimatedSprite.Texture,
                                               this.destinationRect,
                                               this.sourceRect,
                                               Color.White,
