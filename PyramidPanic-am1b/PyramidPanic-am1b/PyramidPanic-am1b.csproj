@@ -111,6 +111,7 @@
     <Compile Include="GameScenes\GameEndScene\GameEndScene.cs" />
     <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
     <Compile Include="GameScenes\LoadScene\LoadScene.cs" />
+    <Compile Include="GameScenes\PlayScene\AnimatedSprite\AnimatedSprite.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\Beetle.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkUp.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\IBeetleState.cs" />

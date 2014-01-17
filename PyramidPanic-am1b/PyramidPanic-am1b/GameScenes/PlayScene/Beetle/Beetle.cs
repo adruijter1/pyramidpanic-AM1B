@@ -19,6 +19,8 @@ namespace PyramidPanic
         private PyramidPanic game;
         private IBeetleState state;
         private Texture2D texture;
+        private WalkUp walkUp;
+        private WalkDown walkDown;
 
         // Properties
         public Vector2 Position
@@ -43,6 +45,14 @@ namespace PyramidPanic
         {
             get { return this.texture; }
         }
+        public WalkDown WalkDown
+        {
+            get { return this.walkDown; }
+        }
+        public WalkUp WalkUp
+        {
+            get { return this.walkUp; }
+        }
 
 
         // Maak de constructor
@@ -51,7 +61,9 @@ namespace PyramidPanic
             this.position = position;
             this.game = game;
             this.texture = this.game.Content.Load<Texture2D>(@"PlayScene\Beetle");
-            this.state = new WalkDown(this);
+            this.walkDown = new WalkDown(this);
+            this.walkUp = new WalkUp(this);
+            this.state = this.walkDown;
         }
 
         public void Update(GameTime gameTime)
