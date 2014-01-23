@@ -17,7 +17,7 @@ namespace PyramidPanic
         private Vector2 position;
         private int speed = 2;
         private PyramidPanic game;
-        private IScorpionState state;
+        private IEntityState state;
         private Texture2D texture;
         private WalkLeft walkLeft;
         private WalkRight walkRight;
@@ -36,7 +36,7 @@ namespace PyramidPanic
         {
             get { return this.speed; }
         }
-        public IScorpionState State
+        public IEntityState State
         {
             get { return this.state; }
             set { this.state = value; }
@@ -56,10 +56,11 @@ namespace PyramidPanic
 
 
         // Maak de constructor
-        public Scorpion(PyramidPanic game, Vector2 position)
+        public Scorpion(PyramidPanic game, Vector2 position, int speed)
         {
             this.position = position;
             this.game = game;
+            this.speed = speed;
             this.texture = this.game.Content.Load<Texture2D>(@"PlayScene\Scorpion");
             this.walkRight = new WalkRight(this);
             this.walkLeft = new WalkLeft(this);

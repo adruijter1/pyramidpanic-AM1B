@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-    public interface IBeetleState
+    public interface IEntityState
     {
         /* Elke toestandsclass van de Beetle past de interface IBeetleState toe (implementeren)
          * Deze interface eist dan van deze toestandsclass dat hij een Update en een Draw method heeft

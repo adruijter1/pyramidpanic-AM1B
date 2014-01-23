@@ -12,10 +12,11 @@ using Microsoft.Xna.Framework.Media;
 namespace PyramidPanic
 {
     // Dit is de toestands class van de Beetle    
-    public class WalkDown : AnimatedSprite, IBeetleState
+    public class WalkDown : AnimatedSprite, IEntityState
     {
         // Fields
         private Beetle beetle;
+        private Vector2 velocity;
 
 
         // Constructor van deze toestands class krijgt altijd het object mee
@@ -24,6 +25,7 @@ namespace PyramidPanic
         {
             this.beetle = beetle;
             this.effect = SpriteEffects.FlipVertically;
+            this.velocity = new Vector2(0f, this.beetle.Speed);
         }
 
         public void Initialize()
@@ -39,7 +41,7 @@ namespace PyramidPanic
                 this.beetle.State = this.beetle.WalkUp;
                 this.beetle.WalkUp.Initialize();
             }
-            this.beetle.Position += new Vector2(0f, this.beetle.Speed);
+            this.beetle.Position += this.velocity;
             base.Update(gameTime);
         }
 

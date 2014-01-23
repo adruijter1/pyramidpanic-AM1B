@@ -12,12 +12,12 @@ using Microsoft.Xna.Framework.Media;
 namespace PyramidPanic
 {
     // Dit is de toestands class van de Beetle    
-    public class WalkLeft : AnimatedSprite, IScorpionState
+    public class WalkLeft : AnimatedSprite, IEntityState
     {
         // Fields
         private Scorpion scorpion;
-
-
+        private Vector2 velocity;
+        
         // Constructor van deze toestands class krijgt altijd het object mee
         // van de hoofdclass Beetle als argument
         public WalkLeft(Scorpion scorpion) : base(scorpion)
@@ -29,6 +29,8 @@ namespace PyramidPanic
         {
             this.destinationRect.X = (int)this.scorpion.Position.X;
             this.destinationRect.Y = (int)this.scorpion.Position.Y;
+            this.effect = SpriteEffects.FlipHorizontally;
+            this.velocity = new Vector2(this.scorpion.Speed, 0f);
         }
 
         public new void Update(GameTime gameTime)
@@ -38,7 +40,7 @@ namespace PyramidPanic
                 this.scorpion.State = this.scorpion.WalkRight;
                 this.scorpion.WalkRight.Initialize();
             }
-            this.scorpion.Position -= new Vector2(0f, this.scorpion.Speed);
+            this.scorpion.Position -= this.velocity;
             base.Update(gameTime);
         }
 
