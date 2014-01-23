@@ -18,6 +18,7 @@ namespace PyramidPanic
         protected Rectangle destinationRect, sourceRect;
         protected SpriteEffects effect = SpriteEffects.None;
         private float timer = 0f;
+        protected int imageNumber = 0;
 
 
         // Constructor
@@ -28,7 +29,7 @@ namespace PyramidPanic
                                                  (int)this.iAnimatedSprite.Position.Y,
                                                  32,
                                                  32);
-            this.sourceRect = new Rectangle(0, 0, 32, 32);
+            this.sourceRect = new Rectangle(this.imageNumber * 32, 0, 32, 32);
         }
 
         public void Update(GameTime gameTime)

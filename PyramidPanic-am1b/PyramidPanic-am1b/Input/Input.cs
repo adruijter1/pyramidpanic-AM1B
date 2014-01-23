@@ -52,6 +52,18 @@ namespace PyramidPanic
             return ((ms.LeftButton == ButtonState.Pressed) && (oms.LeftButton == ButtonState.Released));
         }
 
+        // Dit is een leveldetector voor een willekeurige toets op het toetsenbord die ingedrukt wordt
+        public static bool LevelDetectKeyDown(Keys key)
+        {
+            return ks.IsKeyDown(key);
+        }
+
+        // Dit is een leveldetector voor een willekeurige toets op het toetsenbord die losgelaten wordt
+        public static bool LevelDetectKeyUp(Keys key)
+        {
+            return ks.IsKeyUp(key);
+        }
+
         public static Rectangle MouseRect()
         {
             mouseRect.X = ms.X;

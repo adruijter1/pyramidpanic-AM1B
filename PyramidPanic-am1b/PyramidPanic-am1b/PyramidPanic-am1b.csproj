@@ -116,6 +116,10 @@
     <Compile Include="GameScenes\PlayScene\Beetle\Beetle.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkUp.cs" />
     <Compile Include="GameScenes\PlayScene\Beetle\WalkDown.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkLeft.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\ExplorerWalkRight.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\Explorer.cs" />
+    <Compile Include="GameScenes\PlayScene\Explorer\ExplorerIdle.cs" />
     <Compile Include="GameScenes\PlayScene\IEntityState.cs" />
     <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
     <Compile Include="GameScenes\PlayScene\Scorpion\Scorpion.cs" />
