@@ -58,6 +58,8 @@ namespace PyramidPanic
             {
                 this.explorer.State = this.explorer.WalkDown;
                 this.explorer.WalkDown.Initialize();
+                this.explorer.WalkDown.Initialize();
+                this.explorer.WalkDown.Initialize();
             }
         }
 

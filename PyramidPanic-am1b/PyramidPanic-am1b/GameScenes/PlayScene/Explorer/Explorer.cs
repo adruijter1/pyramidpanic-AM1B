@@ -23,7 +23,7 @@ namespace PyramidPanic
         private ExplorerWalkRight walkRight;
         private ExplorerWalkLeft walkLeft;
         private ExplorerWalkDown walkDown;
-
+        private ExplorerIdleWalk idleWalk;
         // Properties
         public Vector2 Position
         {
@@ -65,6 +65,10 @@ namespace PyramidPanic
         {
             get { return this.walkDown;  }
         }
+        public ExplorerIdleWalk IdleWalk
+        {
+            get { return this.idleWalk; }
+        }
        
 
         // Maak de constructor
@@ -78,6 +82,7 @@ namespace PyramidPanic
             this.walkRight = new ExplorerWalkRight(this);
             this.walkLeft = new ExplorerWalkLeft(this);
             this.walkDown = new ExplorerWalkDown(this);
+            this.idleWalk = new ExplorerIdleWalk(this);
             this.state = this.idle;
         }
 
